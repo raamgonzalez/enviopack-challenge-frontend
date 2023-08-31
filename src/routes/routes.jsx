@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from 'react-router-dom'
+import {  Route, Routes } from 'react-router-dom'
 import { Home } from "../views/Home";
 import { Cart } from "../views/Cart";
 import { Error404 } from "../views/Error404";
