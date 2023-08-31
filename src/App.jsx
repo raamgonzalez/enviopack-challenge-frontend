@@ -1,13 +1,15 @@
-import { useState } from 'react'
-import viteLogo from '/vite.svg'
+import { CartContextProvider } from './context/CartContext'
+import { Layout } from './layout/Layout'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Commit inicial</h1>
+      <CartContextProvider>
+        <Layout>
+        </Layout>
+      </CartContextProvider>
     </>
   )
 }
