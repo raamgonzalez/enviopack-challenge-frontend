@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavBar } from '../components/Header/NavBar'
 import Header from '../components/Header/Header'
+import './Layout.css'
 
 export function Layout ({ children }) {
   return (

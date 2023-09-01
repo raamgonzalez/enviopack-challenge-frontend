@@ -1,16 +1,19 @@
 import { useContext } from 'react'
 import { UsersContext } from '../../context/UsersContext'
+import { NavLink } from 'react-router-dom'
 import './Header.css'
+import { CartContext } from '../../context/CartContext'
 
 export default function Header () {
   const { users } = useContext(UsersContext)
-  console.log(users)
+  const { cart } = useContext(CartContext)
+
   return (
-		<header>
+		<header className='header'>
 			<h1>TecnoLAB</h1>
-			<section>
+			<section className='header__users'>
 				<p>{users.firstName}</p>
-				<p>Carrito ({1})</p>
+				<NavLink to='/cart'>Carrito ({cart.length})</NavLink>
 				<p>Crédito ${users.credit}</p>
 			</section>
 		</header>
