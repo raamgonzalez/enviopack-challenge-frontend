@@ -1,6 +1,5 @@
-
-export function Cart() {
-	return (
+export function Cart () {
+  return (
 		<div>Cart</div>
-	)
+  )
 }
