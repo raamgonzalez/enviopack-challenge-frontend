@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getItems } from '../services/getItems'
 import imageProduct from '../assets/products/image-product.jpg'
-import json from '../mocks/products.json'
 
 export function useItems () {
   const [products, setProducts] = useState([])
@@ -12,9 +11,6 @@ export function useItems () {
       return { ...producto, img: imageProduct }
     })
   }
-
-  console.log('JSON PRODUCTOS', json.productos)
-  console.log('JSON MODIFICADO', mapAddImage(json.productos))
 
   useEffect(() => {
     setLoading(true)

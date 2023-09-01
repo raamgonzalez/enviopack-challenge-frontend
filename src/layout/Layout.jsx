@@ -6,7 +6,9 @@ export function Layout ({ children }) {
   return (
 		<section className="wrapper">
 			<Header/>
-			{children}
+			<main className='wrapper__main'>
+				{children}
+			</main>
 		</section>
   )
 }

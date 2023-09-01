@@ -1,28 +1,25 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
-import { useItems } from '../../hooks/useItems'
-import { Spinner } from '../ui/Spinner'
 import './ItemList.css'
+import { Item } from './Item'
 
-export function ItemList () {
-  const { products, loading } = useItems()
-  console.log('items', products)
-
+export function ItemList ({ products }) {
   return (
 		<main className='products'>
       {products.length < 1}
-      {loading && <Spinner/>}
       <section className='products__container'>
-        {!loading && products.length > 0
-          ? products.map(({ title, id, price, sku, img }) => (
-            <article key={id}>
-              <img src={img} alt={`Imagen de un celular, modelo ${title}`}/>
-              <main>
-                <h2>{title}</h2>
-                <p>{price}</p>
-              </main>
-            </article>
+        {
+          products.map(({ title, id, price, sku, img }) => (
+            <Item
+              key={sku}
+              id={id}
+              title={title}
+              price={price}
+              sku={sku}
+              img={img}
+            />
           ))
-          : !loading && products.length < 1 && (<h1 className= "text-center text-red-800 text-xl">Ups!, fallo la carga de productos</h1>)}
+        }
       </section>
     </main>
   )

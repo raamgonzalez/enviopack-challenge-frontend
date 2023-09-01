@@ -1,3 +1,11 @@
 .wrapper{
 	padding: 2rem 2rem;
 }
+
+.wrapper__main{
+	margin: 5rem auto 0 auto;
+
+	width: 70%;
+
+	text-align: center;
+}

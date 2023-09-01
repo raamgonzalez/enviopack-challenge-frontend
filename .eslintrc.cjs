@@ -29,6 +29,7 @@ module.exports = {
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'no-tabs': ['error', { allowIndentationTabs: true }]
+    'no-tabs': ['error', { allowIndentationTabs: true }],
+    'react/prop-types': 'off'
   }
 }
