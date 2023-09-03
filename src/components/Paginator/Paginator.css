@@ -1,0 +1,6 @@
+.paginator{
+	margin: var(--margin-section) 0 var(--margin-section) 0;
+	display: flex;
+
+	gap: 2rem;
+}

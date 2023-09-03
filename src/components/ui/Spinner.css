@@ -1,4 +1,11 @@
-/* HTML: <div class="loader"></div> */
+
+.loader__container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .loader {
   width: 60px;
   height: 25px;

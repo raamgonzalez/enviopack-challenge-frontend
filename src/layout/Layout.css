@@ -1,9 +1,6 @@
-.wrapper{
-	padding: 2rem 2rem;
-}
 
 .wrapper__main{
-	margin: 5rem auto 0 auto;
+	margin: var(--margin-section) auto 0 auto;
 
 	width: 70%;
 
