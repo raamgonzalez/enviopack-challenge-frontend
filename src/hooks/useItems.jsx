@@ -8,10 +8,27 @@ const INITIAL_PAGE = 0
 export function useItems () {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(false)
-  const [page, setPage] = useState(INITIAL_PAGE)
+  const [currentPage, setCurrentPage] = useState(INITIAL_PAGE)
 
-  const prevHandlerPage = () => { console.log('PrevPage') }
-  const nextHandlerPage = () => { console.log('NextPage') }
+  const prevHandlerPage = () => {
+    console.log('prevPage')
+  }
+
+  const nextHandlerPage = () => {
+    const totalItems = products.length
+    console.log('TotalItems', totalItems)
+    const nextPage = currentPage + 1
+    console.log('NextPage', nextPage)
+
+    const firstIndex = nextPage * ITEMS_PER_PAGE
+    console.log('FirstIndex', firstIndex)
+    if (firstIndex === totalItems) return
+
+    getItems(productos => {
+      setProducts(mapAddImage(productos).splice(firstIndex, ITEMS_PER_PAGE))
+    })
+    setCurrentPage(nextPage)
+  }
 
   const mapAddImage = (productos) => {
     return productos.map(producto => {
@@ -38,8 +55,9 @@ export function useItems () {
   return {
     products,
     loading,
-    page,
+    currentPage,
     prevHandlerPage,
-    nextHandlerPage
+    nextHandlerPage,
+    ITEMS_PER_PAGE
   }
 }

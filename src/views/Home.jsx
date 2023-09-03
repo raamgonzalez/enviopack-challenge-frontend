@@ -5,12 +5,18 @@ import { Spinner } from '../components/ui/Spinner'
 import { Paginator } from '../components/Paginator/Paginator'
 
 export function Home () {
-  const { products, loading, nextHandlerPage, prevHandlerPage, page } = useItems()
+  const { products, loading, nextHandlerPage, prevHandlerPage, currentPage, ITEMS_PER_PAGE } = useItems()
   return (
 		<main className='home'>
       <h2>Catálogo</h2>
       {loading ? <Spinner/> : <ItemList products={products}/>}
-      <Paginator nextHandlerPage={nextHandlerPage} prevHandlerPage={prevHandlerPage} page={page}/>
+      <Paginator
+        nextHandlerPage={nextHandlerPage}
+        prevHandlerPage={prevHandlerPage}
+        currentPage={currentPage}
+        products={products}
+        ITEMS_PER_PAGE={ITEMS_PER_PAGE}
+      />
     </main>
   )
 }

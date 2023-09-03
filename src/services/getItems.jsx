@@ -1,4 +1,4 @@
-export const getItems = async (page = 0) => {
+export const getItems = async () => {
   try {
     const res = await fetch('./src/mocks/products.json')
     const data = await res.json()
