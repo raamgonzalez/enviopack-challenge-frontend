@@ -6,29 +6,10 @@ const ITEMS_PER_PAGE = 6
 const INITIAL_PAGE = 0
 
 export function useItems () {
+  const [productsFromApi, setProductsFromApi] = useState([])
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(INITIAL_PAGE)
-
-  const prevHandlerPage = () => {
-    console.log('prevPage')
-  }
-
-  const nextHandlerPage = () => {
-    const totalItems = products.length
-    console.log('TotalItems', totalItems)
-    const nextPage = currentPage + 1
-    console.log('NextPage', nextPage)
-
-    const firstIndex = nextPage * ITEMS_PER_PAGE
-    console.log('FirstIndex', firstIndex)
-    if (firstIndex === totalItems) return
-
-    getItems(productos => {
-      setProducts(mapAddImage(productos).splice(firstIndex, ITEMS_PER_PAGE))
-    })
-    setCurrentPage(nextPage)
-  }
 
   const mapAddImage = (productos) => {
     return productos.map(producto => {
@@ -36,24 +17,40 @@ export function useItems () {
     })
   }
 
+  const prevHandlerPage = () => {
+    const prevPage = currentPage - 1
+
+    if (prevPage < 0) return
+    const firstIndex = prevPage * ITEMS_PER_PAGE
+    setProducts(mapAddImage([...productsFromApi].splice(firstIndex, ITEMS_PER_PAGE)))
+    setCurrentPage(prevPage)
+  }
+
+  const nextHandlerPage = () => {
+    const totalItems = productsFromApi.length
+    const nextPage = currentPage + 1
+    const firstIndex = nextPage * ITEMS_PER_PAGE
+    if (firstIndex === totalItems) return
+
+    setProducts(mapAddImage([...productsFromApi].splice(firstIndex, ITEMS_PER_PAGE)))
+    setCurrentPage(nextPage)
+  }
+
   useEffect(() => {
     setLoading(true)
     getItems()
       .then(productos => {
-        setProducts(mapAddImage(productos))
+        setProductsFromApi(mapAddImage(productos))
+        setProducts([...productsFromApi].slice(0), ITEMS_PER_PAGE)
         setLoading(false)
       })
 
     return () => {}
   }, [])
 
-  // useEffect(({ page }) => {
-  //   if (page === INITIAL_PAGE) return
-  //   getItems()
-  // }, [page])
-
   return {
     products,
+    productsFromApi,
     loading,
     currentPage,
     prevHandlerPage,
