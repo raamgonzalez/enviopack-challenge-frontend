@@ -1,5 +1,9 @@
 
+.wrapper{
+	height: 100%;
+}
 .wrapper__main{
+	height: 100%;
 	margin: var(--margin-section) auto 0 auto;
 
 	width: 70%;

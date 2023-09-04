@@ -1,10 +1,16 @@
+.products{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
 .products__container{
-	margin: var(--margin-section) 0 0 0;
+	margin: 1rem 0 0 0;
 
 	width: 100%;
 	
-	display: flex;
-	flex-flow: row wrap;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(330px, 3fr));
 	justify-content: center;
 	gap: 1rem;
 }

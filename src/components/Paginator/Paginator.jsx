@@ -6,7 +6,7 @@ export function Paginator ({ currentPage, prevHandlerPage, nextHandlerPage, prod
   return (
 		<nav className='paginator'>
       <button onClick={prevHandlerPage}>Anterior</button>
-      <h3>Pagina: {currentPage + 1} de {totalPages}</h3>
+      <h3>Pagina: {currentPage + 1} de {totalPages === 0 ? 1 : totalPages}</h3>
       <button onClick={nextHandlerPage}>Siguiente</button>
     </nav>
   )

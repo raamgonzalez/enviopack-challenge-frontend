@@ -1,18 +1,15 @@
 import { useEffect, useState } from 'react'
 import { getItems } from '../services/getItems'
 import imageProduct from '../assets/products/image-product.jpg'
-import { useSearch } from './useSearch'
 
 const ITEMS_PER_PAGE = 6
 const INITIAL_PAGE = 0
 
-export function useItems () {
+export function useItems (search, setSearch) {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(INITIAL_PAGE)
   const [index, setIndex] = useState(0)
-  const [search, setSearch] = useState('')
-  // const { error } = useSearch({ search, setSearch })
 
   const mapAddImage = (productos) => {
     return productos.map(producto => {
@@ -20,6 +17,7 @@ export function useItems () {
     })
   }
 
+  // PrevPage
   const prevHandlerPage = () => {
     const prevPage = currentPage - 1
 
@@ -29,6 +27,7 @@ export function useItems () {
     return index
   }
 
+  // NextPage
   const nextHandlerPage = () => {
     const nextPage = currentPage + 1
 
@@ -42,10 +41,9 @@ export function useItems () {
   const paginatorItems = (products) => {
     return products.slice(index, index + ITEMS_PER_PAGE)
   }
-
-  // FilteredItems
   const filteredItems = paginatorItems(products)
 
+  // Peticion a getItems
   useEffect(() => {
     setLoading(true)
     getItems(search) // Si en vez de ponerle search lo hardcodeo con la palabra 'motorola' me lo toma
@@ -53,8 +51,9 @@ export function useItems () {
         setProducts(mapAddImage(productos))
         setLoading(false)
       })
-  }, [search, setSearch])
+  }, [search])
 
+  // Manejadores del form
   const handleSubmit = (event) => {
     event.preventDefault()
   }
@@ -66,15 +65,18 @@ export function useItems () {
 
   return {
     products,
+    setLoading,
+    mapAddImage,
     setProducts,
+    getItems,
     nextHandlerPage,
     prevHandlerPage,
     currentPage,
     filteredItems,
     handleSubmit,
     handleChange,
-    search,
     loading,
-    ITEMS_PER_PAGE
+    ITEMS_PER_PAGE,
+    paginatorItems
   }
 }

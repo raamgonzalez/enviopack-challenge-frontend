@@ -1,15 +1,8 @@
+import { useSearch } from '../../hooks/useSearch'
 import './SearchItems.css'
-import { useItems } from '../../hooks/useItems'
 
-export function SearchItems () {
-  // const { error } = useSearch()
-  const { handleSubmit, handleChange, search } = useItems()
-  // const [keyword, setKeyword] = useState
-
-  // const debouncedGetMovies = useCallback(debounce(search => {
-  //   getItems({ search })
-  // }, 500), [])
-
+export function SearchItems ({ handleSubmit, handleChange, search }) {
+  const { error } = useSearch(search)
   return (
 		<form className='Search-form' onSubmit={handleSubmit}>
 			<input
@@ -19,6 +12,7 @@ export function SearchItems () {
 				onChange={handleChange}
 				value={search}
 			/>
+			{error && <p className='text-red-500 text-center'>{error}</p>}
 		</form>
   )
 }
