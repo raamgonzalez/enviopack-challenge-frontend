@@ -6,7 +6,7 @@ import { Paginator } from '../components/Paginator/Paginator'
 import { SearchItems } from '../components/SearchItems/SearchItems'
 
 export function Home () {
-  const { products, loading, nextHandlerPage, prevHandlerPage, currentPage, ITEMS_PER_PAGE } = useItems()
+  const { products, loading, nextHandlerPage, prevHandlerPage, currentPage, ITEMS_PER_PAGE, productsFromApi } = useItems()
   return (
 		<main className='home'>
       <h2>Catálogo</h2>
@@ -18,7 +18,7 @@ export function Home () {
         nextHandlerPage={nextHandlerPage}
         prevHandlerPage={prevHandlerPage}
         currentPage={currentPage}
-        products={products}
+        productsFromApi={productsFromApi}
         ITEMS_PER_PAGE={ITEMS_PER_PAGE}
       />
     </main>
