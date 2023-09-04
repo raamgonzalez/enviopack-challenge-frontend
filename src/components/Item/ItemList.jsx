@@ -3,7 +3,9 @@ import React from 'react'
 import './ItemList.css'
 import { Item } from './Item'
 
-export function ItemList ({ products }) {
+export function ItemList ({ filteredItems }) {
+  const products = filteredItems
+
   return (
 		<section className='products'>
       {products.length < 1}
