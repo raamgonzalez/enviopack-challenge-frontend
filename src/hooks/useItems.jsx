@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import itemsLength from '../mocks/products.json'
 import { getItems } from '../services/getItems'
 import imageProduct from '../assets/products/image-product.jpg'
 
@@ -6,7 +7,7 @@ const ITEMS_PER_PAGE = 6
 const INITIAL_PAGE = 0
 
 export function useItems () {
-  const [productsFromApi, setProductsFromApi] = useState([])
+  const [index, setIndex] = useState(0)
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(INITIAL_PAGE)
@@ -21,36 +22,33 @@ export function useItems () {
     const prevPage = currentPage - 1
 
     if (prevPage < 0) return
-    const firstIndex = prevPage * ITEMS_PER_PAGE
-    setProducts(mapAddImage([...productsFromApi].splice(firstIndex, ITEMS_PER_PAGE)))
+    setIndex(prevPage * ITEMS_PER_PAGE)
     setCurrentPage(prevPage)
+    return index
   }
 
   const nextHandlerPage = () => {
-    const totalItems = productsFromApi.length
     const nextPage = currentPage + 1
-    const firstIndex = nextPage * ITEMS_PER_PAGE
-    if (firstIndex === totalItems) return
 
-    setProducts(mapAddImage([...productsFromApi].splice(firstIndex, ITEMS_PER_PAGE)))
+    if (nextPage > (itemsLength.productos.length) / ITEMS_PER_PAGE) return
+    setIndex(nextPage * ITEMS_PER_PAGE)
     setCurrentPage(nextPage)
+    return index
   }
 
   useEffect(() => {
     setLoading(true)
-    getItems()
+    getItems({ index, ITEMS_PER_PAGE })
       .then(productos => {
-        setProductsFromApi(mapAddImage(productos))
-        setProducts([...productsFromApi].slice(0), ITEMS_PER_PAGE)
+        setProducts(mapAddImage(productos))
         setLoading(false)
       })
 
     return () => {}
-  }, [])
+  }, [index])
 
   return {
     products,
-    productsFromApi,
     loading,
     currentPage,
     prevHandlerPage,

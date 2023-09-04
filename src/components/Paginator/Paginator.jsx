@@ -1,8 +1,8 @@
 import React from 'react'
 import './Paginator.css'
 
-export function Paginator ({ currentPage, prevHandlerPage, nextHandlerPage, productsFromApi, ITEMS_PER_PAGE }) {
-  const totalPages = Math.round(productsFromApi.length / ITEMS_PER_PAGE)
+export function Paginator ({ currentPage, prevHandlerPage, nextHandlerPage, ITEMS_PER_PAGE, products }) {
+  const totalPages = Math.round(21 / ITEMS_PER_PAGE)
 
   return (
 		<nav className='paginator'>
