@@ -1,4 +1,16 @@
-.Search-form{
+.search__form{
 	display: flex;
 	flex-direction: column;
+}
+.search__input{
+	min-width: 15rem;
+	padding: 0.2em 0.5em;
+	background-color: var(--color-tertiary);
+	border: 1px solid rgba(99, 99, 99, 0.2);;
+	border-radius: var(--border-radius-button);
+}
+
+::placeholder{
+	width: 100%;
+
 }

@@ -12,5 +12,5 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(330px, 3fr));
 	justify-content: center;
-	gap: 1rem;
+	gap: var(--margin-cards);
 }

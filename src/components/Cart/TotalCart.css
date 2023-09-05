@@ -1,0 +1,17 @@
+.cart__total{
+	margin: var(--margin-cards) 0 0 0;
+	font-size: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.cart__total{
+	font-weight: 700;
+}
+
+.cart__buttons{
+	margin: var(--margin-cards) 0 0 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}

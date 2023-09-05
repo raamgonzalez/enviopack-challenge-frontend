@@ -5,6 +5,7 @@ import { Spinner } from '../components/ui/Spinner'
 import { Paginator } from '../components/Paginator/Paginator'
 import { SearchItems } from '../components/SearchItems/SearchItems'
 import { useEffect, useState } from 'react'
+import { Title } from '../components/ui/Title'
 
 export function Home () {
   const [search, setSearch] = useState('')
@@ -25,7 +26,7 @@ export function Home () {
 
   return (
 		<main className='home'>
-      <h2>Catálogo</h2>
+      <Title>Catálogo</Title>
       <section className='home__search'>
         <SearchItems
           search={search}
@@ -34,13 +35,12 @@ export function Home () {
         />
         <ul>
           <select
-            id='selectOrden'
-            className='home__selected'
+            className='home__selected card'
             aria-label='.form-select-sm example'
             value={orderBy} // Establecer el valor seleccionado en el estado
             onChange={handleOrderByChange} // Manejar el cambio de selección
           >
-            <option value='0'>Ordenar por:</option>
+            <option value='0'>Selecionar</option>
             <option value='1'>Mayor a menor</option>
             <option value='2'>Menor a mayor</option>
           </select>

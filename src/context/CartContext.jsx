@@ -1,9 +1,10 @@
-import { createContext, useState } from 'react'
-import { products } from '../mocks/products.json'
+import { createContext, useContext, useState } from 'react'
+import { UsersContext } from './UsersContext'
 
 export const CartContext = createContext('')
 
 export function CartContextProvider ({ children }) {
+  const { credit, setCredit } = useContext(UsersContext)
   const [cart, setCart] = useState([])
 
   const clearCart = () => setCart([])
@@ -17,17 +18,28 @@ export function CartContextProvider ({ children }) {
     setCart(eProduct)
   }
 
-  const onAddProduct = (item) => {
-    if (isInCart(item.id)) return
-    setCart([...cart], { ...item })
+  const onAddProduct = ({ product }) => {
+    if (isInCart(product.id)) return
+    setCart([...cart, { ...product }])
   }
 
-  // useEffect(() => {
-  //   setCart(productos)
-  // }, [])
+  const totalCart = () => {
+    return cart.reduce((acumulador, product) => acumulador + product.price, 0)
+  }
+
+  const onPurchaseWithCredit = () => {
+    const pricePurchase = totalCart()
+    if (credit > pricePurchase) {
+      setCredit(credit - pricePurchase)
+      clearCart()
+      return true
+    } else {
+      return false
+    }
+  }
 
   return (
-		<CartContext.Provider value={{ cart, setCart, eraseProduct, isInCart, clearCart }}>
+		<CartContext.Provider value={{ cart, setCart, eraseProduct, clearCart, onAddProduct, totalCart, onPurchaseWithCredit }}>
 			{children}
 		</CartContext.Provider>
   )

@@ -1,12 +1,13 @@
-.product{
+.card{
 	padding: 2rem 2rem;
 
 	/* width: 400px; */
 	min-height: 100%;
 
-	border: black solid 1px;
+	border: rgba(99, 99, 99, 0.2) solid 1px;
 	border-radius: var(--border-radius-card);
 
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .product__img{
@@ -18,5 +19,5 @@
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	gap: 1rem;
+	gap: var(--margin-cards);
 }

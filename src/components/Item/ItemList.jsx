@@ -11,14 +11,10 @@ export function ItemList ({ filteredItems }) {
       {products.length < 1}
       <section className='products__container'>
         {
-          products.map(({ title, id, price, sku, img }) => (
+          products.map((product) => (
             <Item
-              key={sku}
-              id={id}
-              title={title}
-              price={price}
-              sku={sku}
-              img={img}
+              key={product.sku}
+              product={product}
             />
           ))
         }

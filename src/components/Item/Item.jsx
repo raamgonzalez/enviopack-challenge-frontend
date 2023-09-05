@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import './Item.css'
-export function Item ({ id, img, title, price }) {
+import { Button } from '../ui/Button'
+import { CartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
+
+export function Item ({ product }) {
+  const [irACarrito, setIrACarrito] = useState(false)
+  const { onAddProduct } = useContext(CartContext)
+
+  const onAdd = () => {
+    setIrACarrito(true)
+    onAddProduct({ product })
+  }
+
   return (
-    <article className='product' key={id}>
-      <img className='product__img' src={img} alt={`Imagen de un celular, modelo ${title}`}/>
+    <article className='card' key={product.id}>
+      <img className='product__img' src={product.img} alt={`Imagen de un celular, modelo ${product.title}`}/>
       <main className='product__container'>
-        <h2>{title}</h2>
-        <p>{price}</p>
-        <button>Agregar al carrito</button>
+        <h2>{product.title}</h2>
+        <p>{product.price}</p>
+        <Button onClick={onAdd}>{irACarrito ? <Link to='/cart'>Ver Carrito</Link> : 'Agregar al carrito'}</Button>
       </main>
     </article>
   )

@@ -4,9 +4,9 @@ import './SearchItems.css'
 export function SearchItems ({ handleSubmit, handleChange, search }) {
   const { error } = useSearch(search)
   return (
-		<form className='Search-form' onSubmit={handleSubmit}>
+		<form className='search__form' onSubmit={handleSubmit}>
 			<input
-				className='Search-input'
+				className='card search__input'
 				type='text'
 				placeholder='Buscar productos por nombre'
 				onChange={handleChange}
