@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getItems } from '../services/getItems'
 import imageProduct from '../assets/products/image-product.jpg'
-
-const ITEMS_PER_PAGE = 6
-const INITIAL_PAGE = 0
+import { ITEMS_PER_PAGE, INITIAL_PAGE } from '../utils/paginationConfig'
 
 export function useItems (search, setSearch) {
   const [products, setProducts] = useState([])
@@ -65,18 +63,13 @@ export function useItems (search, setSearch) {
 
   return {
     products,
-    setLoading,
-    mapAddImage,
-    setProducts,
-    getItems,
+    filteredItems,
     nextHandlerPage,
     prevHandlerPage,
-    currentPage,
-    filteredItems,
     handleSubmit,
     handleChange,
     loading,
-    ITEMS_PER_PAGE,
-    paginatorItems
+    currentPage,
+    ITEMS_PER_PAGE
   }
 }
