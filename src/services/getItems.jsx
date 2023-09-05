@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-catch */
 export const getItems = async (search) => {
   try {
-    const res = await fetch('./src/mocks/products.json') // Asegúrate de que la ruta sea correcta
+    const res = await fetch('src/mocks/products.json') // Asegúrate de que la ruta sea correcta
     if (!res.ok) {
       throw new Error('No se pudo obtener la información')
     }
