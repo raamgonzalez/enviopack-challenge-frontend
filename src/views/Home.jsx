@@ -33,7 +33,7 @@ export function Home () {
           handleSubmit={handleSubmit}
         />
         <ul>
-        <select
+          <select
             id='selectOrden'
             className='home__selected'
             aria-label='.form-select-sm example'

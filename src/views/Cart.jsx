@@ -1,5 +1,7 @@
+import { CartList } from '../components/Cart/CartList'
+
 export function Cart () {
   return (
-		<div>Cart</div>
+		<CartList/>
   )
 }

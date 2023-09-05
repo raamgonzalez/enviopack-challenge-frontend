@@ -6,7 +6,8 @@
       "brand": "Motorola",
       "sku": "7RRTTN2WRXANRSIG",
       "price": 21999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "brand": "Motorola",
       "sku": "6EWKNP0EMEWND687",
       "price": 33999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 3,
@@ -22,7 +24,8 @@
       "brand": "Motorola",
       "sku": "APZCT6D2JCPX0A8V",
       "price": 19999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 4,
@@ -30,7 +33,8 @@
       "brand": "LG",
       "sku": "CNP9WW07E2ACQ15C",
       "price": 25999,
-      "discount": 18
+      "discount": 18,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 5,
@@ -38,7 +42,8 @@
       "brand": "Motorola",
       "sku": "7XQSKXS9DVNN9UY9",
       "price": 49999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 6,
@@ -46,7 +51,8 @@
       "brand": "Motorola",
       "sku": "2QMRCZUPA7GQWO90",
       "price": 21999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 7,
@@ -54,7 +60,8 @@
       "brand": "Samsung",
       "sku": "JQ585S9CHIIW9IYF",
       "price": 31999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 8,
@@ -62,7 +69,8 @@
       "brand": "Motorola",
       "sku": "5BFAY679NH9TTWRJ",
       "price": 21999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 9,
@@ -70,7 +78,8 @@
       "brand": "Samsung",
       "sku": "2MB4SEKNGS3R4533",
       "price": 74999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 10,
@@ -78,7 +87,8 @@
       "brand": "Samsung",
       "sku": "JTLO9LQ80NWEO93W",
       "price": 60999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 11,
@@ -86,7 +96,8 @@
       "brand": "Samsung",
       "sku": "RYQKQ2BKAFJTYQCG",
       "price": 40999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 12,
@@ -94,7 +105,8 @@
       "brand": "Samsung",
       "sku": "0GQZRA0YPPYROR9P",
       "price": 15999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 13,
@@ -102,7 +114,8 @@
       "brand": "Samsung",
       "sku": "VKLKEHU9P4QUT700",
       "price": 136999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 14,
@@ -110,7 +123,8 @@
       "brand": "TCL",
       "sku": "NREJYUWGBGI4GIMB",
       "price": 33999,
-      "discount": 10
+      "discount": 10,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 15,
@@ -118,7 +132,8 @@
       "brand": "Samsung",
       "sku": "ZI4GRO2XVDK370YH",
       "price": 28999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 16,
@@ -126,7 +141,8 @@
       "brand": "Motorola",
       "sku": "1QG92REXUE4KGJY6",
       "price": 89999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 17,
@@ -134,7 +150,8 @@
       "brand": "Motorola",
       "sku": "7FPGOEHRE0RVJ3HK",
       "price": 69999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 18,
@@ -142,7 +159,8 @@
       "brand": "TCL",
       "sku": "1NQTNH1PJKYCFDZF",
       "price": 27999,
-      "discount": 12
+      "discount": 12,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 19,
@@ -150,7 +168,8 @@
       "brand": "Samsung",
       "sku": "9R49S3DHCYK8QVI7",
       "price": 21499,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 20,
@@ -158,7 +177,8 @@
       "brand": "Samsung",
       "sku": "7G9B8F3FRJPZZ5CE",
       "price": 21499,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     },
     {
       "id": 21,
@@ -166,7 +186,8 @@
       "brand": "Samsung",
       "sku": "MDRL1V4CBAHB7LBK",
       "price": 15999,
-      "discount": 0
+      "discount": 0,
+      "img": "src/assets/products/image-product.jpg"
     }
   ]
 }

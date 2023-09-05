@@ -7,7 +7,7 @@ export const getItems = async (search) => {
     }
 
     const data = await res.json()
-    const itemsData = data.productos
+    const itemsData = await data.productos
 
     // Filtrar productos si hay un término de búsqueda, de lo contrario, mostrar todos los productos
     const filteredItems = search
