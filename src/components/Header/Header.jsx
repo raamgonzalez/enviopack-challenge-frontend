@@ -21,7 +21,7 @@ export default function Header () {
 				<NavLink to='/cart'>
 					<p className='header__users--bold'>Carrito ({cart.length})</p>
 				</NavLink>
-				<p>Crédito ${credit}</p>
+				<p>Crédito $ {credit}</p>
 			</section>
 		</header>
   )
