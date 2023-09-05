@@ -17,8 +17,8 @@ export function Item ({ product }) {
     <article className='card' key={product.id}>
       <img className='product__img' src={product.img} alt={`Imagen de un celular, modelo ${product.title}`}/>
       <main className='product__container'>
-        <h2>{product.title}</h2>
-        <p>{product.price}</p>
+        <h2 className='product__h2'>{product.title}</h2>
+        <p className='product__p'>$ {product.price}</p>
         <Button onClick={onAdd}>{irACarrito ? <Link to='/cart'>Ver Carrito</Link> : 'Agregar al carrito'}</Button>
       </main>
     </article>

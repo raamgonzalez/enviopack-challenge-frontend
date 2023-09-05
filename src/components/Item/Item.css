@@ -21,3 +21,12 @@
 	text-align: center;
 	gap: var(--margin-cards);
 }
+
+.product__h2{
+	font-size: var(--font-text);
+	font-weight: 300;
+}
+
+.product__p{
+	font-size: var(--font-text);
+}

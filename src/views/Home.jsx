@@ -33,7 +33,8 @@ export function Home () {
           handleChange={handleChange}
           handleSubmit={handleSubmit}
         />
-        <ul>
+        <ul className='home__ul'>
+          ORDENAR POR:
           <select
             className='home__selected card'
             aria-label='.form-select-sm example'

@@ -5,7 +5,6 @@ export const Title = styled.h2`
 	font-size: 2.5em;
 	font-weight: bold;
   color: #131313;
-  cursor: pointer;
 
   padding: 0.25em 1em;
 `

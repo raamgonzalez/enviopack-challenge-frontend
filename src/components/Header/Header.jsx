@@ -1,9 +1,9 @@
 import { useContext, useEffect } from 'react'
 import { UsersContext } from '../../context/UsersContext'
 import { NavLink } from 'react-router-dom'
-import './Header.css'
 import { CartContext } from '../../context/CartContext'
 import { NavBar } from './NavBar'
+import './Header.css'
 
 export default function Header () {
   const { credit, users } = useContext(UsersContext)

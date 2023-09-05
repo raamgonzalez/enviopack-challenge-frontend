@@ -16,7 +16,7 @@ export function Checkout () {
 		<>
 			<Title>Estado de compra</Title>
 			<section className='card checkout'>
-				<p>{isPurchase ? 'Compra finalizada con exito' : 'Ocurrio un error con la compra, revisá que el importe no supere el crédito disponible en tu cuenta'}</p>
+				<p>{isPurchase ? '✔️ Compra finalizada con exito' : '❌ Ocurrio un error con la compra, revisá que el importe no supere el crédito disponible en tu cuenta'}</p>
 				<Button>
 					<Link to='/'>Volver al catálogo</Link>
 				</Button>

@@ -1,3 +1,15 @@
+.cart__empty{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--margin-cards);
+}
+
+.empty__title{
+	font-size: var(--font-text);
+}
+
 .cart__products{
 	margin: var(--margin-section) 0 0 0;
 	display: flex;
