@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 
 export function Home () {
   const [search, setSearch] = useState('')
-  const { products, loading, filteredItems, nextHandlerPage, prevHandlerPage, currentPage, ITEMS_PER_PAGE, handleSubmit, handleChange } = useItems(search, setSearch)
+  const { products, filteredItems, loading, nextHandlerPage, prevHandlerPage, currentPage, ITEMS_PER_PAGE, handleSubmit, handleChange, orderBy, handleOrderByChange } = useItems(search, setSearch)
 
   useEffect(() => {}, [search, products])
 
@@ -32,7 +32,19 @@ export function Home () {
           handleChange={handleChange}
           handleSubmit={handleSubmit}
         />
-        <p>Test</p>
+        <ul>
+        <select
+            id='selectOrden'
+            className='home__selected'
+            aria-label='.form-select-sm example'
+            value={orderBy} // Establecer el valor seleccionado en el estado
+            onChange={handleOrderByChange} // Manejar el cambio de selección
+          >
+            <option value='0'>Ordenar por:</option>
+            <option value='1'>Mayor a menor</option>
+            <option value='2'>Menor a mayor</option>
+          </select>
+        </ul>
       </section>
       <section className='home__container'>
         {loading && <Spinner/>}

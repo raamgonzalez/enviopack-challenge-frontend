@@ -8,6 +8,28 @@ export function useItems (search, setSearch) {
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(INITIAL_PAGE)
   const [index, setIndex] = useState(0)
+  const [orderBy, setOrderBy] = useState('1') // Estado para el orden seleccionado
+  const [sortedItems, setSortedItems] = useState([]) // Estado para los elementos ordenados
+
+  // Peticion a getItems
+  useEffect(() => {
+    setLoading(true)
+    getItems(search) // Si en vez de ponerle search lo hardcodeo con la palabra 'motorola' me lo toma
+      .then(productos => {
+        setProducts(mapAddImage(productos))
+        setLoading(false)
+      })
+  }, [search])
+
+  // Manejadores del form
+  const handleSubmit = (event) => {
+    event.preventDefault()
+  }
+
+  const handleChange = (event) => {
+    const newSearch = event.target.value
+    setSearch(newSearch)
+  }
 
   const mapAddImage = (productos) => {
     return productos.map(producto => {
@@ -36,32 +58,41 @@ export function useItems (search, setSearch) {
   }
 
   // Paginator
-  const paginatorItems = (products) => {
+  const paginatorItems = (sortedItems) => {
     return products.slice(index, index + ITEMS_PER_PAGE)
   }
-  const filteredItems = paginatorItems(products)
+  const filteredItems = paginatorItems(sortedItems)
 
-  // Peticion a getItems
-  useEffect(() => {
-    setLoading(true)
-    getItems(search) // Si en vez de ponerle search lo hardcodeo con la palabra 'motorola' me lo toma
-      .then(productos => {
-        setProducts(mapAddImage(productos))
-        setLoading(false)
-      })
-  }, [search])
+  // Función para ordenar los elementos según la opción seleccionada
+  const sortItems = (items, order) => {
+    // Copiamos el array original para no modificarlo directamente
+    const sorted = [...items]
 
-  // Manejadores del form
-  const handleSubmit = (event) => {
-    event.preventDefault()
+    if (order === '0') return items
+
+    if (order === '1') {
+      // Ordenar de mayor a menor
+      sorted.sort((a, b) => b.price - a.price)
+    } else if (order === '2') {
+      // Ordenar de menor a mayor
+      sorted.sort((a, b) => a.price - b.price)
+    }
+    return sorted
   }
 
-  const handleChange = (event) => {
-    const newSearch = event.target.value
-    setSearch(newSearch)
+  // Manejar el cambio en la selección del orden
+  const handleOrderByChange = (e) => {
+    const selectedOrder = e.target.value
+    setOrderBy(selectedOrder)
+
+    // Ordenar los elementos y establecer el estado de los elementos ordenados
+    const sorted = sortItems(filteredItems, selectedOrder)
+    setSortedItems(sorted)
   }
 
   return {
+    handleOrderByChange,
+    orderBy,
     products,
     filteredItems,
     nextHandlerPage,
