@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { Button } from '../ui/Button'
 import './ItemCart.css'
 import { CartContext } from '../../context/CartContext'
-import { TotalCart } from './TotalCart'
 
 export function ItemCart ({ product }) {
   const { eraseProduct } = useContext(CartContext)

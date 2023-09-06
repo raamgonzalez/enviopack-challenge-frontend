@@ -30,7 +30,10 @@ export function Item ({ product }) {
         <h2 className='product__h2'>{product.title}</h2>
         <div className='product__discount'>
           <p className='product__p'>$ {discountPrice()}</p>
-          {product.discount ? <p className='product__p--discount'>${product.price}<span className='product__p--discount'>{product.discount}%off</span></p> : null}
+          {product.discount
+            ? <p className='product__p--discount'>${product.price}
+          <span className='product__p--discount'>{product.discount}%off</span></p>
+            : null}
         </div>
         <Button onClick={onAdd}>{irACarrito ? 'Ver Carrito' : 'Agregar al carrito'}</Button>
       </main>

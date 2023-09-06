@@ -13,7 +13,7 @@
 .product__article{
 	display: flex;
 	flex-direction: column;
-	/* gap: var(--margin-cards); */
+	gap: var(--margin-cards);
 }
 
 .product__img{
@@ -29,6 +29,7 @@
 }
 
 .product__h2{
+	height: 5rem;
 	font-size: var(--font-text);
 	display: block;
 	font-weight: 400;
