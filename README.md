@@ -42,7 +42,7 @@ finalizar la compra.
 
 ### Estado de compra: Éxito
 
-<a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/RZpDY3qR/Estado-exito.jpg" alt="Estado-exito"/></a><br/><br/>
+<a href="https://ibb.co/3yFy9FG"><img src="https://i.ibb.co/1fXftXh/Estado-exito.jpg" alt="Estado-exito" border="0"></a>
 
 - En la pantalla de Estado de la compra se deberá mostrar la pantalla correspondiente al resultado de la
 diferencia entre el crédito disponible y el importe total de los productos.
