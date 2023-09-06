@@ -1,7 +1,8 @@
 import React from 'react'
+import { Title } from '../components/ui/Title'
 
 export function Error404 () {
   return (
-		<div>Error</div>
+		<Title>Error 404</Title>
   )
 }

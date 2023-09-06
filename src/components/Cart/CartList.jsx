@@ -14,6 +14,7 @@ export function CartList (product) {
   if (cart.length === 0) {
     return (
       <>
+        <Title>Carrito</Title>
         <div className='cart__empty empty'>
             <h2 className='empty__title'>No hay productos en el carrito</h2>
             <Button onClick={() => navigate('/')}>Volver al Home</Button>

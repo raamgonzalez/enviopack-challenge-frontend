@@ -25,15 +25,17 @@ export function Item ({ product }) {
 
   return (
     <article className='card product__article' key={product.id}>
-      <img className='product__img' src={product.img} alt={`Imagen de un celular, modelo ${product.title}`}/>
+      <img className='product__img' src={product.img} alt={`Imagen de producto de nombre ${product.title}`}/>
       <main className='product__container'>
         <h2 className='product__h2'>{product.title}</h2>
         <div className='product__discount'>
           <p className='product__p'>$ {discountPrice()}</p>
-          {product.discount
+          {
+          product.discount
             ? <p className='product__p--discount'>${product.price}
-          <span className='product__p--discount'>{product.discount}%off</span></p>
-            : null}
+              <span className='product__p--discount'>{product.discount}%off</span></p>
+            : null
+          }
         </div>
         <Button onClick={onAdd}>{irACarrito ? 'Ver Carrito' : 'Agregar al carrito'}</Button>
       </main>

@@ -9,7 +9,7 @@ export function ItemCart ({ product }) {
     <>
       <section className='card product__cart'>
         <section className='cart__container'>
-          <img src={product.img}/>
+          <img src={product.img} alt={`Imagen de producto de nombre ${product.title}`}/>
           <p>{product.title}</p>
         </section>
         <section className='cart__price'>

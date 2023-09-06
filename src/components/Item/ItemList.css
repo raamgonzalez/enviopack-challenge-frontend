@@ -5,7 +5,7 @@
 }
 
 .products__container{
-	margin: 1rem 0 0 0;
+	margin: var(--margin-cards) 0 0 0;
 
 	width: 100%;
 	
