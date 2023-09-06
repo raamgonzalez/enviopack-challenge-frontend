@@ -1,8 +1,52 @@
-# React + Vite
+# Envíopack - Challenge Frontend React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objetivo
+El challenge consiste en crear una aplicación web en React imitando una tienda e-commerce a partir de
+un archivo JSON con la información del usuario y los productos. El aspecto debe acercarse lo más
+posible al representado en las capturas de pantalla.
 
-Currently, two official plugins are available:
+## Requisitos
+- El proyecto debe desarrollarse en React y llamarse enviopack-challenge-frontend
+- Alojar el proyecto en Github en un repositorio público
+- Crear los componentes de UI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pantallas
+
+### Catálogo
+
+- El layout principal cuenta con una barra de navegación superior y el contenido.
+La barra de navegación contiene un link que redirige al catálogo, del lado derecho: nombre de usuario,
+un link con acceso al carrito y la cantidad de items agregados (cantidad), y crédito disponible.
+- En esta pantalla, se debe renderizar el listado de productos sin un orden en particular.
+- Cada producto cuenta con su imagen, nombre, importe y acciones (“Agregar al carrito” o “Ver carrito”).
+- El listado contará con paginación mostrando 6 productos por página.
+- Además contará con un campo de texto para filtrar los productos por nombre a medida que se ingresan
+caracteres, y un combo de opciones para ordenar los productos (“seleccionar”, “más baratos”, “más
+caros”).
+- La acción “Agregar al carrito” debe agregar dicho producto al carrito de compras.
+- En caso de que dicho producto haya sido agregado al carrito, se mostrará la opción de “Ver carrito” y
+deberá redirigir a la próxima pantalla.
+
+### Carrito
+
+- En la pantalla de Carrito se deben mostrar los productos previamente agregados.
+- Cada producto podrá eliminarse del carrito de forma individual.
+- Debe mostrarse el importe total de los productos agregados.
+- Debajo del carrito deberán aparecer dos acciones, una para volver a la pantalla anterior y otra para
+finalizar la compra.
+
+### Estado de compra: Éxito
+
+[This is an alt text.](/image/sample.png "This is a sample image.")
+
+- En la pantalla de Estado de la compra se deberá mostrar la pantalla correspondiente al resultado de la
+diferencia entre el crédito disponible y el importe total de los productos.
+- Si la diferencia es cero o positiva, se debe mostrar un mensaje de éxito con una acción para volver a la
+pantalla de catálogo.
+- El importe total debe descontarse del crédito disponible y el contador de productos agregados al carrito
+en la barra de navegación debe restaurarse en cero (0).
+
+### Estado de compra: Error
+
+- Caso contrario, si la diferencia es negativa, debe mostrarse un mensaje informativo de error con la
+compra y una acción que dirija a la pantalla previa del carrito.
