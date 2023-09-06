@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react'
-import './Item.css'
+import { useContext, useState } from 'react'
 import { Button } from '../ui/Button'
 import { CartContext } from '../../context/CartContext'
 import { useNavigate } from 'react-router-dom'
+import './Item.css'
 
 export function Item ({ product }) {
   const [irACarrito, setIrACarrito] = useState(false)

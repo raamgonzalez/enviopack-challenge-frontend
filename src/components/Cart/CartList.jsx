@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../ui/Button'
 import { ItemCart } from './ItemCart'
-import './CartList.css'
 import { TotalCart } from './TotalCart'
 import { Title } from '../ui/Title'
+import './CartList.css'
 
 export function CartList (product) {
   const { cart } = useContext(CartContext)

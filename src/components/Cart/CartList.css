@@ -1,4 +1,5 @@
 .cart__empty{
+	min-height: 700px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -11,7 +12,6 @@
 }
 
 .cart__products{
-	margin: var(--margin-section) 0 0 0;
 	display: flex;
 	flex-direction: column;
 	gap: var(--margin-cards);

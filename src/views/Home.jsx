@@ -1,4 +1,3 @@
-// import { productos } from '../mocks/products.json'
 import { ItemList } from '../components/Item/ItemList'
 import { useItems } from '../hooks/useItems'
 import { Spinner } from '../components/ui/Spinner'
@@ -6,6 +5,7 @@ import { Paginator } from '../components/Paginator/Paginator'
 import { SearchItems } from '../components/SearchItems/SearchItems'
 import { useEffect, useState } from 'react'
 import { Title } from '../components/ui/Title'
+import './Home.css'
 
 export function Home () {
   const [search, setSearch] = useState('')

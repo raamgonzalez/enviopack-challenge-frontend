@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import './ItemList.css'
 import { Item } from './Item'
+import './ItemList.css'
 
 export function ItemList ({ filteredItems }) {
   const products = filteredItems

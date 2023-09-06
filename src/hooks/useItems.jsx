@@ -6,7 +6,7 @@ export function useItems (search, setSearch) {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(INITIAL_PAGE)
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0) // Estado paginator
   const [orderBy, setOrderBy] = useState('0') // Estado para el orden seleccionado
   const [sortedItems, setSortedItems] = useState([]) // Estado para los elementos ordenados
 
@@ -53,7 +53,6 @@ export function useItems (search, setSearch) {
 
   // Función para ordenar los elementos según la opción seleccionada
   const sortItems = (items, order) => {
-    // Copiamos el array original para no modificarlo directamente
     const sorted = [...items]
 
     if (order === '0') return sorted
@@ -75,9 +74,7 @@ export function useItems (search, setSearch) {
     const selectedOrder = e.target.value
     setOrderBy(selectedOrder)
 
-    // Ordenar los elementos y establecer el estado de los elementos ordenados
     const sorted = sortItems(products, selectedOrder)
-    console.log(selectedOrder)
     setSortedItems(sorted)
   }
 
