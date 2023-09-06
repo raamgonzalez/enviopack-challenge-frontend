@@ -1,4 +1,5 @@
-# Envíopack - Challenge Frontend React
+# Envíopack - Challenge Frontend React              <img src="https://www.enviopack.com/img/general/logo-black.png" style="margin-left:40px;align-items: center;" />
+
 
 ## Objetivo
 El challenge consiste en crear una aplicación web en React imitando una tienda e-commerce a partir de
@@ -13,6 +14,8 @@ posible al representado en las capturas de pantalla.
 ## Pantallas
 
 ### Catálogo
+
+<a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/vm1NwQVd/Catalogo.jpg" alt="Catalogo"/></a><br/><br/>
 
 - El layout principal cuenta con una barra de navegación superior y el contenido.
 La barra de navegación contiene un link que redirige al catálogo, del lado derecho: nombre de usuario,
@@ -29,6 +32,8 @@ deberá redirigir a la próxima pantalla.
 
 ### Carrito
 
+<a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/gkdQLFfv/Carrito.jpg" alt="Carrito"/></a><br/><br/>
+
 - En la pantalla de Carrito se deben mostrar los productos previamente agregados.
 - Cada producto podrá eliminarse del carrito de forma individual.
 - Debe mostrarse el importe total de los productos agregados.
@@ -37,7 +42,7 @@ finalizar la compra.
 
 ### Estado de compra: Éxito
 
-[This is an alt text.](/image/sample.png "This is a sample image.")
+<a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/RZpDY3qR/Estado-exito.jpg" alt="Estado-exito"/></a><br/><br/>
 
 - En la pantalla de Estado de la compra se deberá mostrar la pantalla correspondiente al resultado de la
 diferencia entre el crédito disponible y el importe total de los productos.
@@ -47,6 +52,8 @@ pantalla de catálogo.
 en la barra de navegación debe restaurarse en cero (0).
 
 ### Estado de compra: Error
+
+<a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/qvvFQcBq/Estado-error.jpg" alt="Estado-error"/></a><br/><br/>
 
 - Caso contrario, si la diferencia es negativa, debe mostrarse un mensaje informativo de error con la
 compra y una acción que dirija a la pantalla previa del carrito.
