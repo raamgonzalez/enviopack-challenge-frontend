@@ -10,6 +10,12 @@
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.product__article{
+	display: flex;
+	flex-direction: column;
+	/* gap: var(--margin-cards); */
+}
+
 .product__img{
 	width: 100%;
 }
@@ -24,9 +30,33 @@
 
 .product__h2{
 	font-size: var(--font-text);
-	font-weight: 300;
+	display: block;
+	font-weight: 400;
+
+}
+
+.product__discount{
+	display: flex;
+	align-items: center;
+	gap: var(--margin-cards);
 }
 
 .product__p{
 	font-size: var(--font-text);
+	font-weight: 300;
+}
+
+.product__p--discount{
+	position: relative;
+	font-size: 1.2rem;
+	text-decoration: line-through;
+}
+
+.product__p--discount span{
+	text-decoration: none;
+	color: red;
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	transform: rotate(380deg);
 }
