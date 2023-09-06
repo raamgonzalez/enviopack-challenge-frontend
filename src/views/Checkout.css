@@ -1,0 +1,16 @@
+.checkout{
+  margin: var(--margin-section) 0 0 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--margin-cards);
+}
+
+.checkout__p{
+	width: 24rem;
+}
+
+.checkout button{
+  width: 50%;
+}
